@@ -1,18 +1,34 @@
-# Rixon_ML
+# Modelos de secuencia a función regulatoria
 
-Material de investigación y documentación técnica sobre modelos de *deep learning* que predicen función regulatoria a partir de ADN no codificante.
+Esta carpeta contiene una guía de lectura en español para una persona con base de ML y poca biología. El punto de partida es NCNet (2019) y los trabajos posteriores se separan en dos grupos:
 
-## Investigación disponible
+- **Comparación directa:** conserva la entrada de 1 kb y las 919 etiquetas del benchmark DeepSEA (ChromDL).
+- **Extensiones del mismo problema:** siguen prediciendo función regulatoria desde ADN, pero aumentan contexto, número de ensayos, resolución o incorporan datos de contexto celular.
 
-La colección principal está en [research/noncoding-dna](research/noncoding-dna/README.md). Está pensada para lectores con conocimientos de ML que están entrando en genómica regulatoria.
+## Contenido
 
-Incluye:
+- [Resumen de NCNet](summaries/00-ncnet.md)
+- [FactorNet](summaries/01-factornet.md)
+- [Sei](summaries/02-sei.md)
+- [ChromDL](summaries/03-chromdl.md)
+- [Enformer](summaries/04-enformer.md)
+- [Borzoi](summaries/05-borzoi.md)
+- [Comparación transversal](comparacion.md)
 
-- Un [resumen completo de NCNet](research/noncoding-dna/summaries/00-ncnet.md): tarea, dominio, entradas, salidas, arquitectura, evaluación y límites.
-- Resúmenes de sus sucesores relevantes: [FactorNet](research/noncoding-dna/summaries/01-factornet.md), [Sei](research/noncoding-dna/summaries/02-sei.md), [ChromDL](research/noncoding-dna/summaries/03-chromdl.md), [Enformer](research/noncoding-dna/summaries/04-enformer.md) y [Borzoi](research/noncoding-dna/summaries/05-borzoi.md).
-- Una [comparación transversal](research/noncoding-dna/comparacion.md) de arquitecturas, tareas, entradas, salidas, métricas reportadas y aportaciones.
-- Copias de los artículos en PDF en [research/noncoding-dna/papers](research/noncoding-dna/papers), incluidos preprints abiertos cuando la versión editorial no está disponible libremente.
+## PDFs descargados
 
-## Alcance
+Los siguientes archivos se verificaron como PDFs legibles. FactorNet, ChromDL y Borzoi se guardan como preprints abiertos; los resúmenes indican además el DOI de la versión revisada por pares cuando existe.
 
-Estos modelos no diagnostican enfermedades directamente. Predicen señales regulatorias, expresión o cobertura RNA-seq desde la secuencia de ADN; sus resultados deben tratarse como evidencia *in silico* y validarse con datos experimentales cuando se requiera una conclusión causal.
+| Archivo | Versión |
+|---|---|
+| `papers/factornet-2017-preprint.pdf` | Preprint que antecede a FactorNet (2019) |
+| `papers/sei-2022.pdf` | Artículo publicado en *Nature Genetics* |
+| `papers/chromdl-2023-preprint.pdf` | Preprint que antecede a ChromDL (2023) |
+| `papers/enformer-2021.pdf` | Artículo publicado en *Nature Methods* |
+| `papers/borzoi-2023-preprint.pdf` | Preprint que antecede a Borzoi (2025) |
+
+Los resúmenes incluyen DOI, código y enlace al artículo para localizar la versión editorial correspondiente.
+
+## Convención de lectura
+
+Un valor de salida alto significa: “según los experimentos usados para entrenar, esta secuencia parece compatible con esta señal regulatoria”. No prueba por sí mismo causalidad, actividad en todos los tejidos ni patogenicidad clínica.
